@@ -5,10 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no tests are implemented yet \" && exit 1"
+    "test": "mocha 'tests/*.test.js'"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  }
 }
