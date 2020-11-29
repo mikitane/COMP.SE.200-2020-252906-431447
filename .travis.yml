@@ -2,5 +2,10 @@ language: node_js
 node_js:
   - 14
 
+addons:
+  artifacts: true
+  paths:
+    - ./coverage/add.js.html
+
 after_success:
 - npm run coverage
