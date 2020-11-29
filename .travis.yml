@@ -3,5 +3,4 @@ node_js:
   - 14
 
 after_success:
-- ./node_modules/.bin/jscoverage src src-cov
-- ./node_modules/.bin/mocha tests/*.test.js -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
+- npm run coverage
