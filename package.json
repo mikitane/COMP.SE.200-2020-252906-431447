@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "c8 --all --include 'src' --exclude 'src/.internal' --reporter=html --reporter=text mocha 'tests/*.test.js'",
-    "coverage": "c8 --all --include 'src' --exclude 'src/.internal' report --reporter=text-lcov | coveralls",
-    "asd": "which coveralls"
+    "coverage": "c8 --all --include 'src' --exclude 'src/.internal' report --reporter=text-lcov | coveralls"
   },
   "author": "",
   "license": "MIT",
