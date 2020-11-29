@@ -4,13 +4,13 @@ import words from '../src/words.js';
 const { expect } = chai;
 
 describe('words', function () {
-  it('Empty string', function () {
+  it('With empty string', function () {
     const wordsArray = words('');
     expect(wordsArray).to.be.an('array').that.is.empty;
   });
 
-  it('Two words', function() {
+  it('With two words', function() {
     const wordsArray = words('My Test');
-    expect(wordsArray).to.be.an('array').that.have.lengthOf(2);
+    expect(wordsArray).to.have.members(['My', 'Test']);
   });
 });
