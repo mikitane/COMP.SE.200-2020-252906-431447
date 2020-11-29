@@ -6,9 +6,9 @@ addons:
   artifacts:
     debug: true
     paths:
-      - ./coverage/add.js.html
+      - ./coverage
     target_paths:
-      - /reports
+      - /
 
 after_success:
 - npm run coverage
