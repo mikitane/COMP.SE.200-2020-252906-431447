@@ -10,8 +10,8 @@ describe('memoize', function () {
     const origValue = func(obj);
 
     // memoized function does not notice a changed
-    // value inside an object. So should return the
-    // memoized value.
+    // value inside an object. So, it should return
+    // the previously memoized value.
     obj.a = 3;
     const memoizedValue = func(obj);
 
