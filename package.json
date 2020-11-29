@@ -5,12 +5,17 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha 'tests/*.test.js'"
+    "test": "c8 --all --include 'src' --exclude 'src/.internal' --reporter=html --reporter=text mocha 'tests/*.test.js'",
+    "coverage": "c8 --all --include 'src' --exclude 'src/.internal' report --reporter=text-lcov | coveralls",
+    "asd": "which coveralls"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "c8": "^7.3.5",
+    "chai": "^4.2.0",
+    "coveralls": "^3.1.0",
     "mocha": "^8.2.1"
   }
 }
