@@ -12,3 +12,4 @@ addons:
 
 after_success:
 - npm run coverage
+
