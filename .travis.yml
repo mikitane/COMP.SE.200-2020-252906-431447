@@ -11,4 +11,7 @@ addons:
       - /
 
 after_success:
+- cat ${TRAVIS_REPO_SLUG}
+- cat ${TRAVIS_BUILD_NUMBER}
+- cat ${TRAVIS_JOB_NUMBER}
 - npm run coverage
