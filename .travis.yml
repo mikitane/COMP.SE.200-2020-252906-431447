@@ -8,11 +8,9 @@ addons:
     paths:
       - ./coverage
     target_paths:
-      - /
+      - /${TRAVIS_BRANCH}/${TRAVIS_COMMIT}/
+      - /${TRAVIS_BRANCH}/latest/
 
 after_success:
-- cat ${TRAVIS_REPO_SLUG}
-- cat ${TRAVIS_BUILD_NUMBER}
-- cat ${TRAVIS_JOB_NUMBER}
 - npm run coverage
 
