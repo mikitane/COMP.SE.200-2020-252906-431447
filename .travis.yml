@@ -4,7 +4,7 @@ node_js:
 
 script:
   - npm test
-  # Copy reports to same directory in Traveis so only one directory is uploaded to S3.
+  # Copy reports to same directory in Travis so only one directory is uploaded to S3.
   # This way the coverage and mochawesome reports will be in their own directories in S3.
   # Without doing this the files in those directories would end up in the same directory in S3.
   - mkdir ./reports-to-s3
