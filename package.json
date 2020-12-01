@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "c8 --all --include 'src' --exclude 'src/.internal' --reporter=html --reporter=text mocha --reporter mochawesome 'tests/*.test.js'",
+    "test_man": "c8 --all --include 'src' --exclude 'src/.internal' --reporter=html --reporter=text mocha --reporter mochawesome",
     "coverage": "c8 --all --include 'src' --exclude 'src/.internal' report --reporter=text-lcov | coveralls"
   },
   "author": "",
