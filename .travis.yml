@@ -2,11 +2,19 @@ language: node_js
 node_js:
   - 14
 
+script:
+  - npm test
+  # Copy reports to same directory in Travis so only one directory is uploaded to S3.
+  # This way the coverage and mochawesome reports will be in their own directories in S3.
+  # Without doing this the files in those directories would end up in the same directory in S3.
+  - mkdir ./reports-to-s3
+  - cp -r ./coverage ./reports-to-s3/coverage
+  - cp -r ./mochawesome-report ./reports-to-s3/mochawesome-report
+
 addons:
   artifacts:
     paths:
-      - ./coverage
-      - ./mochawesome-report
+      - ./reports-to-s3
     target_paths:
       - /${TRAVIS_BRANCH}/${TRAVIS_COMMIT}/
       - /${TRAVIS_BRANCH}/latest/
