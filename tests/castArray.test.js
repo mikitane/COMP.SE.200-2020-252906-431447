@@ -6,6 +6,11 @@ const expect = chai.expect
 
 describe("taulukko", () =>{
    it("savutesti", () =>{
-      expect(castArray("qwe")).to.have.members(["qwe"])
+      expect(castArray('qwe')).to.have.members(['qwe'])
    });
+
+   it("tyhjä merkkijono", () =>{
+      expect(castArray('')).to.have.members([''])
+   });
+   
 })

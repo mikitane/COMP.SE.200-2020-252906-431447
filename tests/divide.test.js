@@ -8,4 +8,12 @@ describe("Jakolasku", () =>{
    it("savutesti", () =>{
       expect(divide(4, 2)).to.deep.equal(2)
    });
+
+   it("negatiiviset luvut", () =>{
+      expect(divide(-4, -2)).to.deep.equal(2)
+   });
+
+   it("nollalla jako", () =>{
+      expect(divide(4, 0)).to.throw()
+   });
 })

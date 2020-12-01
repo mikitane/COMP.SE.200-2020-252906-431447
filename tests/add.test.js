@@ -12,4 +12,8 @@ describe("summa", () =>{
    it("negatiiviset luvut", () => {
       expect(add(-3, -4)).to.deep.equal(-7)
    });
+
+   it("nollat", () => {
+      expect(add(0, 0)).to.deep.equal(0)
+   });
 })
