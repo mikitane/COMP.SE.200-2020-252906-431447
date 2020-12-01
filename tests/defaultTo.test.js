@@ -24,4 +24,12 @@ describe("Tavallinen", () =>{
    it("0", () =>{
       expect(defaultTo(0, 2)).to.deep.equal(0)
    });
+
+   it("With product category filled", function() {
+      expect(defaultTo('Category 1', 'Default category')).to.be.equal('Category 1')
+   });
+
+   it("With product category not filled, null", function() {
+      expect(defaultTo(null, 'Default category')).to.be.equal('Default category')
+   });
 })
