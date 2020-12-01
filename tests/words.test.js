@@ -13,4 +13,14 @@ describe('words', function () {
     const wordsArray = words('My Test');
     expect(wordsArray).to.have.members(['My', 'Test']);
   });
+
+  it('With dot in sentence', function() {
+    const wordsArray = words('This product is good.', /[.\w]+/g);
+    expect(wordsArray).to.have.members(['This', 'product', 'is', 'good.']);
+  });
+
+  it('With dot and comma in sentence', function() {
+    const wordsArray = words('This product is good, no doubt.', /[,.\w]+/g);
+    expect(wordsArray).to.have.members(['This', 'product', 'is', 'good,', 'no', 'doubt.']);
+  });
 });
