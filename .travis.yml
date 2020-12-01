@@ -4,7 +4,6 @@ node_js:
 
 addons:
   artifacts:
-    debug: true
     paths:
       - ./coverage
       - ./mochawesome-report
