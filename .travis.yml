@@ -2,5 +2,15 @@ language: node_js
 node_js:
   - 14
 
+addons:
+  artifacts:
+    debug: true
+    paths:
+      - ./coverage
+    target_paths:
+      - /${TRAVIS_BRANCH}/${TRAVIS_COMMIT}/
+      - /${TRAVIS_BRANCH}/latest/
+
 after_success:
 - npm run coverage
+
