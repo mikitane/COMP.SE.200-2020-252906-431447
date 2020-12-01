@@ -28,4 +28,12 @@ describe("Loppu merkki", () =>{
    it("kolmas parametri 1 väärin", () =>{
       expect(endsWith('asdf', 's', 1)).to.deep.equal(false)
    });
+
+   it("With dot in the end, single words", function() {
+      expect(endsWith('Test.', '.')).to.be.true;
+   });
+
+   it("With dot in the end, sentence", function() {
+      expect(endsWith('My test senctence.', '.')).to.be.true;
+   });
 })
