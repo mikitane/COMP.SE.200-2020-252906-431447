@@ -4,13 +4,12 @@ node_js:
 
 addons:
   artifacts:
-    debug: true
     paths:
       - ./coverage
+      - ./mochawesome-report
     target_paths:
       - /${TRAVIS_BRANCH}/${TRAVIS_COMMIT}/
       - /${TRAVIS_BRANCH}/latest/
 
 after_success:
 - npm run coverage
-
