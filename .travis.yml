@@ -19,5 +19,9 @@ addons:
       - /${TRAVIS_BRANCH}/${TRAVIS_COMMIT}/
       - /${TRAVIS_BRANCH}/latest/
 
+# Upload coverage reports to Coveralls in both cases: success and failure
 after_success:
+- npm run coverage
+
+after_failure:
 - npm run coverage
