@@ -8,4 +8,9 @@ describe('keys', function () {
     const _keys = keys({ 'a': 1, 'b': 2 });
     expect(_keys).to.have.members(['a', 'b']);
   });
+
+  it('With Array', function () {
+    const _keys = keys([1, 2, 3]);
+    expect(_keys).to.have.members(['0', '1', '2']);
+  });
 });
