@@ -23,4 +23,19 @@ describe('words', function () {
     const wordsArray = words('This product is good, no doubt.', /[,.\w]+/g);
     expect(wordsArray).to.have.members(['This', 'product', 'is', 'good,', 'no', 'doubt.']);
   });
+
+  it('With custom pattern not matching anything', function () {
+    const wordsArray = words('test', 'not');
+    expect(wordsArray).to.be.an('array').that.is.empty;
+  });
+
+  it('With unicode words', function () {
+    const wordsArray = words('test ä');
+    expect(wordsArray).to.be.an('array').to.have.members(['test', 'ä']);
+  });
+
+  it('With ascii words', function () {
+    const wordsArray = words('test test');
+    expect(wordsArray).to.be.an('array').to.have.members(['test', 'test']);
+  });
 });
