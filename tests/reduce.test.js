@@ -24,4 +24,9 @@ describe('reduce', function () {
     const reducedValue = reduce([], (sum, n) => sum + n, 0);
     expect(reducedValue).to.be.equal(0);
   });
+
+  it('With filled object', function () {
+    const reducedValue = reduce({'a': 1, 'b': 2}, (result, value, key) => result + value);
+    expect(reducedValue).to.be.equal(3);
+  });
 });
