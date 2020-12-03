@@ -4,27 +4,38 @@ import eq from "../src/eq.js"
 
 const expect = chai.expect
 
-describe("Yhtäsuuruus", () =>{
-   it("savutesti", () =>{
-      expect(eq('a', 'a')).to.deep.equal(true)
+describe("eq", function () {
+   it("'a', 'a'", function () {
+      expect(eq('a', 'a')).to.be.true
    });
 
-   it("eri merkit", () =>{
-      expect(eq('b', 'a')).to.deep.equal(false)
+   it("'b', 'a'", function () {
+      expect(eq('b', 'a')).to.be.false
    });
 
-   it("NaN", () =>{
-      expect(eq(NaN, NaN)).to.deep.equal(true)
+   it("NaN, NaN", function () {
+      expect(eq(NaN, NaN)).to.be.true
    });
 
    const olioA = {'a':1};
    const olioB = {'a':1};
    
-   it("eri oliot", () =>{
-      expect(eq(olioA, olioB)).to.deep.equal(false)
+   it("different object", function () {
+      expect(eq(olioA, olioB)).to.be.false
    });
 
-   it("samat oliot", () =>{
-      expect(eq(olioA, olioA)).to.deep.equal(true)
+   it("same object", function () {
+      expect(eq(olioA, olioA)).to.be.true
+   });
+
+   const taulukkoA = [1, 2]
+   const taulukkoB = [1, 2]
+
+   it("different array", function () {
+      expect(eq(taulukkoA, taulukkoB)).to.be.false
+   });
+
+   it("same array", function () {
+      expect(eq(taulukkoA, taulukkoA)).to.be.true
    });
 })

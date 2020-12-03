@@ -4,16 +4,24 @@ import add from "../src/add.js"
 
 const expect = chai.expect
 
-describe("summa", () =>{
-   it("savutesti", () => {
+describe("add", function () {
+   it("2, 3", function () {
       expect(add(2, 3)).to.deep.equal(5)
    });
 
-   it("negatiiviset luvut", () => {
+   it("2, -3", function () {
+      expect(add(2, 3)).to.deep.equal(-1)
+   });
+
+   it("-2, 3", function () {
+      expect(add(2, 3)).to.deep.equal(1)
+   });
+
+   it("-3, -4", function () {
       expect(add(-3, -4)).to.deep.equal(-7)
    });
 
-   it("nollat", () => {
+   it("0, 0", function () {
       expect(add(0, 0)).to.deep.equal(0)
    });
 })

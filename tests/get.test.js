@@ -4,21 +4,25 @@ import get from "../src/get.js"
 
 const expect = chai.expect
 
-describe("Alkion palauttaja", () =>{
+describe("get", function () {
    const olio = {'a':1, 'b':2, 'c':3};
-   it("savutesti", () =>{
-      expect(get(olio, 'b[0]')).to.deep.equal(2)
+   it("smoke", function () {
+      expect(get(olio, 'b')).to.deep.equal(2)
    });
 
-   it("tyhjä olio", () =>{
-      expect(get({}, 'b[0]', 'default')).to.deep.equal('default')
+   it("empty object", function () {
+      expect(get({}, 'b', 'default')).to.deep.equal('default')
    });
 
-   it("taulukko parametrina", () =>{
-      expect(get(olio, ['b', '0'], 'default')).to.deep.equal(2)
+   it("Array 1", function () {
+      expect(get(olio, ['b'], 'default')).to.deep.equal(2)
    });
 
-   it("taulukko parametrina väärin", () =>{
+   it("Array 2", function () {
       expect(get(olio, ['b', '1'], 'default')).to.deep.equal('default')
+   });
+
+   it("null", function () {
+      expect(get(null, ['b'], 'default')).to.deep.equal('default')
    });
 })

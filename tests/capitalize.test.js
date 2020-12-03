@@ -4,20 +4,24 @@ import capitalize from "../src/capitalize.js"
 
 const expect = chai.expect
 
-describe("Isokirjain", () =>{
-   it("savutesti", () =>{
+describe("capitalize", function () {
+   it("smoke", function () {
       expect(capitalize('qwerty')).to.deep.equal('Qwerty')
    });
 
-   it("tyhjä merkkijono", () =>{
+   it("(empty)", function () {
       expect(capitalize('')).to.deep.equal('')
    });
 
-   it("valmiiksi iso kirjain", () =>{
+   it("Qwerty", function () {
       expect(capitalize('Qwerty')).to.deep.equal('Qwerty')
    });
 
-   it("kaikki isoja kirjaimia", () =>{
+   it("QWERTY", function () {
       expect(capitalize('QWERTY')).to.deep.equal('Qwerty')
+   });
+
+   it("qWERTY", function () {
+      expect(capitalize('qWERTY')).to.deep.equal('Qwerty')
    });
 })

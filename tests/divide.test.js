@@ -4,16 +4,24 @@ import divide from "../src/divide.js"
 
 const expect = chai.expect
 
-describe("Jakolasku", () =>{
-   it("savutesti", () =>{
+describe("divide", function () {
+   it("4, 2", function () {
       expect(divide(4, 2)).to.deep.equal(2)
    });
 
-   it("negatiiviset luvut", () =>{
+   it("-4, -2", function () {
       expect(divide(-4, -2)).to.deep.equal(2)
    });
 
-   it("nollalla jako", () =>{
+   it("-4, 2", function () {
+      expect(divide(-4, 2)).to.deep.equal(-2)
+   });
+
+   it("4, -2", function () {
+      expect(divide(4, -2)).to.deep.equal(-2)
+   });
+
+   it("4, 0", function () {
       expect(divide(4, 0)).to.throw()
    });
 })

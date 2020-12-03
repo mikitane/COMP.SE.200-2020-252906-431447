@@ -4,17 +4,24 @@ import countBy from "../src/countBy.js"
 
 const expect = chai.expect
 
-describe("Laskuri", () =>{
-   it("savutesti", () =>{
-      expect(countBy([{'a': 1, 'b': 1}, {'a': 2, 'b': 2}], x => x.a)).to.include({1: 1, 2: 1})
+describe("countBy", function () {
+   const taulukkoA = [{'a': 1, 'b': 1}, {'a': 2, 'b': 2}];
+   const taulukkoB = [{'a': 1, 'b': 1}, {'a': 2, 'b': 2}, {'a': 1, 'b': 1}, {'a': 2, 'b': 2}];
+
+   it("smoke", function () {
+      expect(countBy(taulukkoA, x => x.a)).to.include({1: 1, 2: 1})
    });
 
-   it("tyhjä taulukko", () =>{
+   it("empty array", function () {
       expect(countBy([], x => x.a)).to.include({})
    });
 
-   it("tyhjä", () =>{
-      expect(countBy([{'a': 1, 'b': 1}, {'a': 2, 'b': 2}], x => x.c)).to.include({})
+   it("test 3", function () {
+      expect(countBy(taulukkoA, x => x.c)).to.include({})
+   });
+
+   it("test 4", function () {
+      expect(countBy(taulukkoB, x => x.a)).to.include({1: 2, 2: 2})
    });
 
    it("With array of products, count number of same product", function() {
@@ -26,5 +33,5 @@ describe("Laskuri", () =>{
        ];
 
        expect(countBy(products, product => product.name)).to.deep.equal({'My Product 1': 2, 'My Product 2': 1, 'My Product 3': 1})
-   })
+   });
 })

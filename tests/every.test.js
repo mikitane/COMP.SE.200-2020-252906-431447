@@ -4,20 +4,16 @@ import every from "../src/every.js"
 
 const expect = chai.expect
 
-describe("Läpäiseekö jokainen", () =>{
-   it("savutesti", () =>{
-      expect(every([1, 2, 3], Number)).to.deep.equal(true)
+describe("every", function () {
+   it("Boolean 1", function () {
+      expect(every([true, false, true], Boolean)).to.be.false
    });
 
-   it("Boolean väärin", () =>{
-      expect(every([1, 2, 3], Boolean)).to.deep.equal(false)
+   it("Boolean 2", function () {
+      expect(every([true, true, true], Boolean)).to.be.true
    });
 
-   it("Boolean oikein", () =>{
-      expect(every([true, false, true], Boolean)).to.deep.equal(true)
-   });
-
-   it("String", () =>{
-      expect(every(['1', '2', '3'], String)).to.deep.equal(true)
+   it("null", function () {
+      expect(every(null, Boolean)).to.be.false
    });
 })

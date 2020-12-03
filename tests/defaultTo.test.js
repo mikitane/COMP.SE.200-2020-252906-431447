@@ -4,24 +4,24 @@ import defaultTo from "../src/defaultTo.js"
 
 const expect = chai.expect
 
-describe("Tavallinen", () =>{
-   it("savutesti", () =>{
+describe("defaultTo", function () {
+   it("1, 2", function () {
       expect(defaultTo(1, 2)).to.deep.equal(1)
    });
 
-   it("null", () =>{
+   it("null", function () {
       expect(defaultTo(null, 2)).to.deep.equal(2)
    });
 
-   it("NaN", () =>{
+   it("NaN", function () {
       expect(defaultTo(NaN, 2)).to.deep.equal(2)
    });
 
-   it("undefined", () =>{
+   it("undefined", function () {
       expect(defaultTo(undefined, 2)).to.deep.equal(2)
    });
 
-   it("0", () =>{
+   it("0", function () {
       expect(defaultTo(0, 2)).to.deep.equal(0)
    });
 
