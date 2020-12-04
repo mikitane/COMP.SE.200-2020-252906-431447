@@ -12,9 +12,9 @@ describe("at", function () {
 
    it("empty path", function () {
       expect(at(olioA, [])).to.have.ordered.members([])
-   })
+   });
 
    it("empty object", function () {
       expect(at({}, ['a'])).to.have.ordered.members([])
-   })
+   });
 })

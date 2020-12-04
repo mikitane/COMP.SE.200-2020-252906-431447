@@ -10,11 +10,11 @@ describe("add", function () {
    });
 
    it("2, -3", function () {
-      expect(add(2, 3)).to.deep.equal(-1)
+      expect(add(2, -3)).to.deep.equal(-1)
    });
 
    it("-2, 3", function () {
-      expect(add(2, 3)).to.deep.equal(1)
+      expect(add(-2, 3)).to.deep.equal(1)
    });
 
    it("-3, -4", function () {
@@ -24,4 +24,9 @@ describe("add", function () {
    it("0, 0", function () {
       expect(add(0, 0)).to.deep.equal(0)
    });
+
+   it("1.1, 2.2", function () {
+      expect(add(1.1, 2.2)).to.be.closeTo(3.3, 0.0001)
+   });
+
 })
