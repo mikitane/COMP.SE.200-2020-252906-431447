@@ -13,4 +13,24 @@ describe('isSymbol', function () {
     const _isSymbol = isSymbol('test')
     expect(_isSymbol).to.be.false;
   });
+
+  it('With number', function () {
+    const _isSymbol = isSymbol(100)
+    expect(_isSymbol).to.be.false;
+  });
+
+  it('With object', function () {
+    const _isSymbol = isSymbol({})
+    expect(_isSymbol).to.be.false;
+  });
+
+  it('With array', function () {
+    const _isSymbol = isSymbol([])
+    expect(_isSymbol).to.be.false;
+  });
+
+  it('With null', function () {
+    const _isSymbol = isSymbol(null)
+    expect(_isSymbol).to.be.false;
+  });
 });

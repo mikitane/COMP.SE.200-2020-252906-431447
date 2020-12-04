@@ -13,4 +13,19 @@ describe('isObject', function () {
     const _isObject = isObject('test')
     expect(_isObject).to.be.false;
   });
+
+  it('With null', function () {
+    const _isObject = isObject(null)
+    expect(_isObject).to.be.false;
+  });
+
+  it('With array', function () {
+    const _isObject = isObject([])
+    expect(_isObject).to.be.true;
+  });
+
+  it('With function', function () {
+    const _isObject = isObject(function () {})
+    expect(_isObject).to.be.true;
+  });
 });
