@@ -13,4 +13,14 @@ describe('map', function () {
     const mappedValues = map(null, x => x);
     expect(mappedValues).to.be.empty;
   });
+
+  it('With object', function () {
+    const mappedValues = () => map({"a": 1}, x => x);
+    expect(mappedValues).to.throw();
+  });
+
+  it('With string', function () {
+    const mappedValues = () => map('test', x => x);
+    expect(mappedValues).to.throw();
+  });
 });
