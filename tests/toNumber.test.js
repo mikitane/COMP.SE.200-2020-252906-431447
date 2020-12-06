@@ -51,6 +51,6 @@ describe('toNumber', function () {
 
   it('With bad signed hex', function () {
     const number = toNumber('-0x0001')
-    expect(number).to.equal(NaN);
+    expect(number).to.deep.equal(NaN);
   });
 });

@@ -21,7 +21,7 @@ describe('toString', function () {
 
   it('With array of nulls', function () {
     const string = toString([null, null])
-    expect(string).to.be.equal('null,null');
+    expect(string).to.be.equal(',');
   });
 
   it('With -0', function () {
