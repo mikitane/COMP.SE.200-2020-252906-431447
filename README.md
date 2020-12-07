@@ -4,6 +4,9 @@
 
 [![Build Status](https://travis-ci.com/mikitane/COMP.SE.200-2020-252906-431447.svg?branch=master)](https://travis-ci.com/mikitane/COMP.SE.200-2020-252906-431447)
 
+This is the course project for Tampere University (TUNI) course COMP.SE.200-2020-2021-1 Software Testing.
+Purpose of this project was to test a pre-given JavaScript library as comprehensive as possible.
+
 ## Running tests locally
 You need git, node and npm installed on your machine. Run the tests by following these steps:
 1. Clone the project
@@ -32,14 +35,14 @@ Those reports are available here:
 ### Coveralls (Coverage reports)
 https://coveralls.io/github/mikitane/COMP.SE.200-2020-252906-431447?branch=master
 
-### AWS S3 (Coverage + Mochawesome reports)
+### AWS S3 (Mochawesome + Coverage reports)
 
-#### Coverage
-https://software-testing-reports.s3.amazonaws.com//<branch>/<latest>or<commit-id>/mochawesome-report/mochawesome.html
+#### Mochawesome
+https://software-testing-reports.s3.amazonaws.com/\<branch\>/\<latest\>or\<commit-id\>/mochawesome-report/mochawesome.html
 
 E.g. https://software-testing-reports.s3.amazonaws.com/master/latest/mochawesome-report/mochawesome.html
 
-#### Mochawesome
-https://software-testing-reports.s3.amazonaws.com/<branch>/<latest>or<commit-id>/coverage/<name-of-the-file-tested>.html
+#### Coverage
+https://software-testing-reports.s3.amazonaws.com/\<branch\>/\<latest\>or\<commit-id\>/coverage/\<name-of-the-file-tested\>.html
 
 E.g. https://software-testing-reports.s3.amazonaws.com/master/latest/coverage/at.js.html
